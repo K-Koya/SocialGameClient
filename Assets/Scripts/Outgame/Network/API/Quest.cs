@@ -34,6 +34,21 @@ namespace Outgame
     }
 
     [Serializable]
+    public class APIRequestEventQuestStart : APIRequestBase
+    {
+        public int eventQuestId;
+    }
+
+    [Serializable]
+    public class APIResponceEventQuestStart : APIResponceBase
+    {
+        public string transactionId;
+        public int afterMovePoint;
+        public long lastPointUpdate;
+        //APIResponceQuestEnemy[] enemies; //TODO: 実際は出現する敵を返す
+    }
+
+    [Serializable]
     public class APIRequestQuestResult : APIRequestBase
     {
         public string transactionId;
@@ -42,6 +57,19 @@ namespace Outgame
 
     [Serializable]
     public class APIResponceQuestResult : APIResponceBase
+    {
+        public APIResponceQuestReward[] rewards;
+    }
+
+    [Serializable]
+    public class APIRequestEventQuestResult : APIRequestBase
+    {
+        public string transactionId;
+        public int result;
+    }
+
+    [Serializable]
+    public class APIResponceEventQuestResult : APIResponceBase
     {
         public APIResponceQuestReward[] rewards;
     }

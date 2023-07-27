@@ -14,6 +14,8 @@ namespace Outgame
         {
             ViewId = ViewID.Home;
             _hasPopUI = true;
+
+
         }
 
         public override void Enter()
@@ -45,6 +47,11 @@ namespace Outgame
         public void GoQuest()
         {
             UIManager.NextView(ViewID.Quest);
+        }
+
+        public void GoEventHome()
+        {
+            UIManager.NextView(ViewID.Event);
         }
 
 

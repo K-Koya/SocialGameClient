@@ -26,28 +26,28 @@ namespace Outgame
 
         void Ready(int questId)
         {
-            SequenceBridge.RegisterSequence("Quest", SequencePackage.Create<QuestPackage>(UniTask.RunOnThreadPool(async () =>
+            SequenceBridge.RegisterSequence("EventQuest", SequencePackage.Create<QuestPackage>(UniTask.RunOnThreadPool(async () =>
             {
                 var start = await GameAPI.API.QuestStart(questId);
                 //本来はインゲームに行く
                 //成功ってことにする
-                var result = await GameAPI.API.QuestResult(1);
+                var result = await GameAPI.API.EventQuestResult(1);
 
                 //アイテム付与
 
 
                 //パッケージ
-                var package = SequenceBridge.GetSequencePackage<QuestPackage>("Quest");
+                var package = SequenceBridge.GetSequencePackage<QuestPackage>("EventQuest");
                 package.QuestResult = result;
 
                 //リザルトへ
-                UniTask.Post(GoResult);
+                UniTask.Post(GoEventResult);
             })));
         }
 
-        void GoResult()
+        void GoEventResult()
         {
-            UIManager.NextView(ViewID.QuestResult);
+            UIManager.NextView(ViewID.EventQuestResult);
         }
 
         public void Back()

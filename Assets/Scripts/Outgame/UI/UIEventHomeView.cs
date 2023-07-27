@@ -12,7 +12,7 @@ namespace Outgame
     {
         protected override void AwakeCall()
         {
-            ViewId = ViewID.Home;
+            ViewId = ViewID.Event;
             _hasPopUI = true;
         }
 
@@ -27,24 +27,19 @@ namespace Outgame
             Debug.Log(EventHelper.IsEventGamePlayable(1));
         }
 
-        public void GoGacha()
+        public void GoRanking()
         {
-            UIManager.NextView(ViewID.Gacha);
+            UIManager.NextView(ViewID.EventRanking);
         }
 
-        public void GoCardList()
+        public void GoHome()
         {
-            UIManager.NextView(ViewID.CardList);
+            UIManager.NextView(ViewID.Home);
         }
 
-        public void GoEnhance()
+        public void GoEventQuest()
         {
-            UIManager.NextView(ViewID.Enhance);
-        }
-
-        public void GoQuest()
-        {
-            UIManager.NextView(ViewID.Quest);
+            UIManager.NextView(ViewID.EventQuest);
         }
 
 

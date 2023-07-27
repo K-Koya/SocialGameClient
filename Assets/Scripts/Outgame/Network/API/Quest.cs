@@ -104,6 +104,32 @@ namespace Outgame
             var res = GetPacketBody<APIResponceQuestResult>(json);
             return res;
         }
+
+        public async UniTask<APIResponceQuestStart> EventQuestStart(int questId)
+        {
+            string request = string.Format("{0}/event/quest/start", GameSetting.GameAPIURI);
+
+            var quest = CreateRequest<APIRequestQuestStart>();
+            quest.questId = questId;
+
+            string json = await PostRequest(request, quest);
+            var res = GetPacketBody<APIResponceQuestStart>(json);
+            _questTransaction = res.transactionId;
+            return res;
+        }
+
+        public async UniTask<APIResponceQuestResult> EventQuestResult(int result)
+        {
+            string request = string.Format("{0}/event/quest/result", GameSetting.GameAPIURI);
+
+            var quest = CreateRequest<APIRequestQuestResult>();
+            quest.result = result;
+            quest.transactionId = _questTransaction;
+
+            string json = await PostRequest(request, quest);
+            var res = GetPacketBody<APIResponceQuestResult>(json);
+            return res;
+        }
     }
 
 
@@ -118,6 +144,16 @@ namespace Outgame
         public async UniTask<APIResponceQuestResult> QuestResult(int result)
         {
             //※未実装！！
+            return await LocalData.LoadAsync<APIResponceQuestResult>("DummyPacket/questresult.json", GameSetting.DataPath, false);
+        }
+
+        public async UniTask<APIResponceQuestStart> EventQuestStart(int questId)
+        {
+            return await LocalData.LoadAsync<APIResponceQuestStart>("DummyPacket/questStart.json", GameSetting.DataPath, false);
+        }
+
+        public async UniTask<APIResponceQuestResult> EventQuestResult(int result)
+        {
             return await LocalData.LoadAsync<APIResponceQuestResult>("DummyPacket/questresult.json", GameSetting.DataPath, false);
         }
     }

@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 2702447536785047973}
-  _textKey: UIGacha
+  _textKey: UIGoHome
 --- !u!1 &2702447536785047975
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1122020975130662961}
-  _textKey: UICardList
+  _textKey: UIRanking
 --- !u!1 &7814803881294652311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,4 +1053,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1748892337195834265}
-  _textKey: UIQuest
+  _textKey: UIEventQuest

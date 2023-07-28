@@ -56,9 +56,9 @@ namespace Outgame
             SequenceBridge.DeleteSequence("Quest");
         }
 
-        public void GoHome()
+        public void GoEventHome()
         {
-            UIManager.NextView(ViewID.Home);
+            UIManager.NextView(ViewID.Event);
         }
     }
 }

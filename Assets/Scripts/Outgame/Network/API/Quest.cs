@@ -49,6 +49,13 @@ namespace Outgame
     }
 
     [Serializable]
+    public class APIResponceEventRankingColumn : APIRequestBase
+    {
+        public string userName;
+        public int point;
+    }
+
+    [Serializable]
     public class APIRequestQuestResult : APIRequestBase
     {
         public string transactionId;
@@ -72,6 +79,17 @@ namespace Outgame
     public class APIResponceEventQuestResult : APIResponceBase
     {
         public APIResponceQuestReward[] rewards;
+    }
+
+    [Serializable]
+    public class APIRequestEventGetRanking : APIRequestBase
+    {
+    }
+
+    [Serializable]
+    public class APIResponceEventGetRanking : APIResponceBase
+    {
+        public APIResponceEventRankingColumn[] rewards;
     }
 
 
@@ -128,6 +146,17 @@ namespace Outgame
 
             string json = await PostRequest(request, quest);
             var res = GetPacketBody<APIResponceQuestResult>(json);
+            return res;
+        }
+
+        public async UniTask<APIResponceEventGetRanking> EventQuestRanking()
+        {
+            string request = string.Format("{0}/event/quest/ranking", GameSetting.GameAPIURI);
+
+            var quest = CreateRequest<APIRequestEventGetRanking>();
+
+            string json = await PostRequest(request, quest);
+            var res = GetPacketBody<APIResponceEventGetRanking>(json);
             return res;
         }
     }

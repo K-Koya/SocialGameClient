@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6578705117962092000}
-        m_TargetAssemblyTypeName: Outgame.UIQuestView, Assembly-CSharp
-        m_MethodName: Back
+      - m_Target: {fileID: 1989036406847976773}
+        m_TargetAssemblyTypeName: Outgame.UIEventRankingView, Assembly-CSharp
+        m_MethodName: GoEventHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30A4\u30D9\u30F3\u30C8\u30AF\u30A8\u30B9\u30C8\u4E00\u89A7"
+  m_text: "\u30A4\u30D9\u30F3\u30C8\u30E9\u30F3\u30AD\u30F3\u30B0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 239a48f7b8ab08f498e184ea1c1e1eb1, type: 2}
   m_sharedMaterial: {fileID: 4078949194299654689, guid: 239a48f7b8ab08f498e184ea1c1e1eb1, type: 2}
@@ -320,7 +320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00045813396}
+  m_AnchoredPosition: {x: 0, y: -0.00000022257375}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4900977853423956956
@@ -573,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374198166401888389}
   - component: {fileID: 3580871540529791538}
-  - component: {fileID: 6578705117962092000}
+  - component: {fileID: 1989036406847976773}
   m_Layer: 5
   m_Name: EventRanking
   m_TagString: Untagged
@@ -617,7 +617,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &6578705117962092000
+--- !u!114 &1989036406847976773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -626,11 +626,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4913753044336203899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d8b91a3de391d48a022189a6f6a0a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 028eca2001eddec40889cba6807690e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
-  _listView: {fileID: 7434943311398656827}
+  _listView: {fileID: 0}
 --- !u!1 &5183927163020395755
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 8264888355089420447}
   - component: {fileID: 6391946234783081519}
   - component: {fileID: 2452236159384234108}
-  - component: {fileID: 7434943311398656827}
+  - component: {fileID: 6735248131589993817}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -868,7 +868,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &7434943311398656827
+--- !u!114 &6735248131589993817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -877,16 +877,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5885547691616762450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a39968d95cf5ec9429a21a1dd538cbbe, type: 3}
+  m_Script: {fileID: 11500000, guid: f2e64e8bed355974697d39e5f769eb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rect: {fileID: 6391946234783081519}
   _line: {fileID: 0}
   _card: {fileID: 0}
   _content: {fileID: 5338380319313151119}
-  _chapterPrefab: {fileID: 2625422133001496020, guid: 9bcb5effa72fe0d49b8c741a8f162d1a, type: 3}
-  _questStackPrefab: {fileID: 2625422133001496020, guid: 2f3672d105334394f8bde1564fdc89af, type: 3}
-  _questPrefab: {fileID: 2625422133001496020, guid: ed82e859cc4f3bc4e8d399053c80296f, type: 3}
+  _RankingPrefab: {fileID: 2625422133001496020, guid: ca443409adee6124f87554482c84733f, type: 3}
 --- !u!1 &7825793832848922323
 GameObject:
   m_ObjectHideFlags: 0

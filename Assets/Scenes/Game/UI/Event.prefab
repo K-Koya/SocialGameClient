@@ -145,9 +145,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6234278708388462897}
   - component: {fileID: 4031807802120555484}
-  - component: {fileID: 5374111005199522437}
+  - component: {fileID: 5366862712504227820}
   m_Layer: 5
-  m_Name: EventHome
+  m_Name: Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5374111005199522437
+--- !u!114 &5366862712504227820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2590893252736736659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8872f0396a6e0524086d4a43d0315e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dca8122dc748a64f88dbaab94d94d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 1
@@ -325,9 +325,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5374111005199522437}
-        m_TargetAssemblyTypeName: Outgame.UIHomeView, Assembly-CSharp
-        m_MethodName: GoGacha
+      - m_Target: {fileID: 5366862712504227820}
+        m_TargetAssemblyTypeName: Outgame.UIEventHomeView, Assembly-CSharp
+        m_MethodName: GoHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -744,9 +744,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5374111005199522437}
-        m_TargetAssemblyTypeName: Outgame.UIHomeView, Assembly-CSharp
-        m_MethodName: GoCardList
+      - m_Target: {fileID: 5366862712504227820}
+        m_TargetAssemblyTypeName: Outgame.UIEventHomeView, Assembly-CSharp
+        m_MethodName: GoRanking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1028,9 +1028,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5374111005199522437}
-        m_TargetAssemblyTypeName: Outgame.UIHomeView, Assembly-CSharp
-        m_MethodName: GoQuest
+      - m_Target: {fileID: 5366862712504227820}
+        m_TargetAssemblyTypeName: Outgame.UIEventHomeView, Assembly-CSharp
+        m_MethodName: GoEventQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -371,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374198166401888389}
   - component: {fileID: 3580871540529791538}
-  - component: {fileID: 9210718195939751044}
+  - component: {fileID: 3146440509727702023}
   m_Layer: 5
   m_Name: EventQuestResult
   m_TagString: Untagged
@@ -415,7 +415,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &9210718195939751044
+--- !u!114 &3146440509727702023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4913753044336203899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9533e438244ad7e4ab9dbb606fccb772, type: 3}
+  m_Script: {fileID: 11500000, guid: c94adeff45d4c9541b8ab9cf18869cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
@@ -616,9 +616,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9210718195939751044}
-        m_TargetAssemblyTypeName: Outgame.UIQuestResultView, Assembly-CSharp
-        m_MethodName: GoHome
+      - m_Target: {fileID: 3146440509727702023}
+        m_TargetAssemblyTypeName: Outgame.UIEventQuestResultView, Assembly-CSharp
+        m_MethodName: GoEventHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

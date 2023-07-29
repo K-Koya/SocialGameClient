@@ -28,7 +28,7 @@ namespace Outgame
         {
             SequenceBridge.RegisterSequence("EventQuest", SequencePackage.Create<QuestPackage>(UniTask.RunOnThreadPool(async () =>
             {
-                var start = await GameAPI.API.QuestStart(questId);
+                var start = await GameAPI.API.EventQuestStart(questId);
                 //本来はインゲームに行く
                 //成功ってことにする
                 var result = await GameAPI.API.EventQuestResult(1);

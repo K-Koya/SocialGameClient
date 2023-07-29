@@ -15,10 +15,8 @@ namespace Outgame
             _hasPopUI = false;
         }
 
-        private async void Start()
+        private void Start()
         {
-            await QuestListModel.LoadAsync();
-
             _listView.Setup();
             Active();
         }
@@ -32,7 +30,7 @@ namespace Outgame
                 var result = await GameAPI.API.EventQuestResult(1);
 
                 //アイテム付与
-
+                Debug.Log($"クエスト : {questId}");
 
                 //パッケージ
                 var package = SequenceBridge.GetSequencePackage<QuestPackage>("EventQuest");
@@ -45,7 +43,7 @@ namespace Outgame
 
         public void GoEventHome()
         {
-            UIManager.NextView(ViewID.EventQuestResult);
+            UIManager.NextView(ViewID.Event);
         }
 
         public void Back()

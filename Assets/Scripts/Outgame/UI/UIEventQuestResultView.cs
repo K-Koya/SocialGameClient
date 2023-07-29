@@ -33,6 +33,10 @@ namespace Outgame
             switch (type)
             {
                 case RewardItemType.EventPoint: ret = string.Format("{0}ポイント", int.Parse(reward.param[0])); break;
+                case RewardItemType.None: break;
+                case RewardItemType.Card: ret = MasterData.GetLocalizedText(MasterData.GetCard(int.Parse(reward.param[0])).Name); break;
+                case RewardItemType.Money: ret = string.Format("{0}Money", int.Parse(reward.param[0])); break;
+                case RewardItemType.Item: ret = string.Format("{0}{1}つ", MasterData.GetLocalizedText(MasterData.GetItem(int.Parse(reward.param[0])).Name), int.Parse(reward.param[1])); break;
                 default: Debug.LogError($"規定と異なる種類の報酬が検出されました。type : {type}"); break;
             }
             return ret;
@@ -40,7 +44,7 @@ namespace Outgame
 
         void CreateView()
         {
-            var package = SequenceBridge.GetSequencePackage<QuestPackage>("Quest");
+            var package = SequenceBridge.GetSequencePackage<QuestPackage>("EventQuest");
 
             foreach (var reward in package?.QuestResult?.rewards)
             {
@@ -53,7 +57,7 @@ namespace Outgame
                 text.text = string.Format("{0}を手に入れた", GetRewardObjectString(reward));
             }
 
-            SequenceBridge.DeleteSequence("Quest");
+            SequenceBridge.DeleteSequence("EventQuest");
         }
 
         public void GoEventHome()

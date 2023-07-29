@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace Outgame
 {
     public class UIHomeView : UIStackableView
     {
+        [SerializeField]
+        Button _goEventHome = null;
+
         protected override void AwakeCall()
         {
             ViewId = ViewID.Home;
@@ -27,6 +31,8 @@ namespace Outgame
             Debug.Log(EventHelper.GetAllOpenedEvent());
             Debug.Log(EventHelper.IsEventOpen(1));
             Debug.Log(EventHelper.IsEventGamePlayable(1));
+
+            _goEventHome.gameObject.SetActive(EventHelper.IsEventOpen(1));
         }
 
         public void GoGacha()

@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 1
+  _goEventHome: {fileID: 2207396992083705786}
 --- !u!1 &2702447535103527814
 GameObject:
   m_ObjectHideFlags: 0

@@ -89,7 +89,7 @@ namespace Outgame
     [Serializable]
     public class APIResponceEventGetRanking : APIResponceBase
     {
-        public APIResponceEventRankingColumn[] rewards;
+        public APIResponceEventRankingColumn[] ranking;
     }
 
 

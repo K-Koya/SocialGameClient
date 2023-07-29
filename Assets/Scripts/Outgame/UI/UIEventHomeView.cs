@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace Outgame
 {
     public class UIEventHomeView : UIStackableView
     {
+        [SerializeField]
+        Button _goEventQuest = null;
+
         protected override void AwakeCall()
         {
             ViewId = ViewID.Event;
@@ -25,6 +28,8 @@ namespace Outgame
             Debug.Log(EventHelper.GetAllOpenedEvent());
             Debug.Log(EventHelper.IsEventOpen(1));
             Debug.Log(EventHelper.IsEventGamePlayable(1));
+
+            _goEventQuest.interactable = EventHelper.IsEventGamePlayable(1);
         }
 
         public void GoRanking()

@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using static Outgame.QuestListView;
 
 namespace Outgame
@@ -15,8 +16,6 @@ namespace Outgame
     /// </summary>
     public class RankingListView : ListView
     {
-        [SerializeField] GameObject _RankingPrefab;
-
         List<ListItemRanking> _rankingList = new List<ListItemRanking>();
         APIResponceEventGetRanking _ranking = null;
         int _selectedRank = -1;
@@ -32,13 +31,22 @@ namespace Outgame
             _itemList.Clear();
             _scrollPos = 0;
 
-            //チャプターとその子供になるクエストをリストに入れる
-            for (int i = 0; i < _ranking.rewards.Length; ++i)
+            GameObject sceneOrigin = Addressables.LoadAssetAsync<GameObject>(string.Format("Assets/Prefabs/Event/EventRanking.prefab")).WaitForCompletion();
+            if (sceneOrigin == default)
             {
-                var chapter = GameObject.Instantiate(_RankingPrefab, _content.RectTransform);
-                var listItem = ListItemBase.ListItemSetup<ListItemRanking>(i, chapter, null);
+                Debug.LogError($"EventRanking : ランキングビューの読み込みに失敗");
+                return;
+            }
 
-                listItem.SetupRankingData(i, _ranking.rewards[i].userName, _ranking.rewards[i].point);
+            //_ranking = 
+
+            //ランキング情報をリストに入れる
+            for (int i = 0; i < _ranking.ranking.Length; ++i)
+            {
+                var ins = GameObject.Instantiate(sceneOrigin, _content.RectTransform);
+                var listItem = ListItemBase.ListItemSetup<ListItemRanking>(i, ins, null);
+
+                listItem.SetupRankingData(i + 1, _ranking.ranking[i].userName, _ranking.ranking[i].point);
 
                 _itemList.Add(listItem);
                 _lineList.Add(listItem.gameObject);
